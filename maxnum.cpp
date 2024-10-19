@@ -1,21 +1,29 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <limits>
+
 using namespace std;
 
-void solve(){
+void solve() {
     int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    cin >> n;
+    
+    // Use vector for dynamic sizing
+    vector<int> arr(n);
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-    int mx=INT32_MIN;
-    for(int i=0;i<n;i++){
-        mx=max(mx,arr[i]);
+    
+    // Initialize mx to the smallest possible integer
+    int mx = numeric_limits<int>::min();
+    for(int i = 0; i < n; i++) {
+        mx = max(mx, arr[i]);
     }
-    cout<<mx<<endl;
+    
+    cout << mx << endl;
 }
 
 int main() {
-  solve();
-  return 0;
+    solve();
+    return 0;
 }
